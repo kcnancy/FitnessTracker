@@ -1,4 +1,4 @@
-var path = require("path");
+const path = require("path");
 
 // Routes for HTML
 module.exports = function (app) {
