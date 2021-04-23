@@ -20,7 +20,7 @@ mongoose.connect(
   useFindAndModify: false,
 });
 
-require("./controllers/apiRoutes")(app);
+require("./controllers/apirgit outes")(app);
 require("./controllers/htmlRoutes")(app);
 
 app.listen(PORT, function () {
