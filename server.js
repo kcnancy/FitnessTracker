@@ -15,8 +15,8 @@ var MONGODB_URI =
   process.env.MONGODB_URI || "mongodb://localhost/workoutTracker";
 mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
-  useUnifiedTopology: true,
   useCreateIndex: true,
+  useUnifiedTopology: true,
   useFindAndModify: false,
 });
 
