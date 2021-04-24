@@ -17,8 +17,8 @@ module.exports = (app) => {
         },
       },
     ])
-      .then((dbworkout) => {
-        dbworkout.reverse();
+      .then((dbWorkout) => {
+        dbWorkout.reverse();
         res.json(dbworkout);
       })
       .catch((err) => {
@@ -26,34 +26,34 @@ module.exports = (app) => {
       });
   });
 
-  app.put("/api/workout/:id", (req, res) => {
-    db.workout.findByIdAndUpdate(req.params.id, {
+  app.put("/api/workouts/:id", (req, res) => {
+    db.Workout.findByIdAndUpdate(req.params.id, {
       $push: {
         exercises: req.body,
       },
     })
-      .then((dbworkout) => {
-        res.json(dbworkout);
+      .then((dbWorkout) => {
+        res.json(dbWorkout);
       })
       .catch((err) => {
         res.json(err);
       });
   });
 
-  app.post("/api/workout", (req, res) => {
+  app.post("/api/workouts", (req, res) => {
     console.log(req.body);
-    db.workout.create(req.body)
-      .then((dbworkout) => {
-        console.log(dbworkout);
-        res.json(dbworkout);
+    db.Workout.create(req.body)
+      .then((dbWorkout) => {
+        console.log(dbWorkout);
+        res.json(dbWorkout);
       })
       .catch((err) => {
         res.json(err);
       });
   });
 
-  app.get("/api/workout/range", (req, res) => {
-    db.workout.aggregate([
+  app.get("/api/workouts/range", (req, res) => {
+    db.Workout.aggregate([
       {
         $sort: {
           day: -1,
@@ -68,9 +68,9 @@ module.exports = (app) => {
         },
       },
     ])
-      .then((dbworkout) => {
-        dbworkout.reverse();
-        res.json(dbworkout);
+      .then((dbWorkout) => {
+        dbWorkout.reverse();
+        res.json(dbWorkout);
       })
       .catch((err) => {
         res.json(err);
