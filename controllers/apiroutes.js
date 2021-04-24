@@ -1,8 +1,8 @@
 const db = require("../models");
 
 module.exports = (app) => {
-  app.get("/api/workout", (req, res) => {
-    db.workout.aggregate([
+  app.get("/api/workouts", (req, res) => {
+    db.Workout.aggregate([
       {
         $sort: {
           day: -1,
