@@ -23,9 +23,9 @@ npm install
 ```sh
 npm run start
 ```
-![Screenshot](\public\images\deployeddash.png)
+![Screenshot](/public/images/deployeddash.png)
 
-![Screenshot](\public\images\deployedstats.png)
+![Screenshot](/public/images/deployedstats.png)
 
 ## Author
 
